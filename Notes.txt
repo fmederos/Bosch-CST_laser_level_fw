@@ -1,0 +1,29 @@
+Notes:
+This FW version for the Laser Level was developed with MPLABX 5.45 and XC8 2.32.
+PIC16f676 needs 5.0V to be programmed, it is not enough with the
+3.3V which the regulator on PCB provides.
+This revised FW lets pulse frequency be continuously adjusted from 9Hz up to 10KHz
+in order to use generic pulsed laser receivers.
+During my tests I found that horizontal LED has a rather slow turn-on slew rate
+and long propagation time. These two characteristics made impossible to reach a
+frequency of 10KHz without hardware modifications.
+What I did to overcome the propagation delay exhibited by the horiz. laser diode
+was to bias this LED with a 50ohm resistor so it really never turns-off completely.
+As a side effect now when I select only vertical line with Mode key the Horizontal
+LED shines dimly.
+
+Outdoor mode is enabled/disabled by pressing Mode button while powering-up the
+Laser Level.
+
+Pulse frequency setting mode is entered by pressing the Lock button while power-up.
+While in Pulse Freq. setting mode use Mode and Lock buttons to inc/decrease frequency.
+Each time frequency changes lock indicator led flashes.
+Horizontal and vertical indicator leds flashes at a frequency related
+to the laser pulse frequency (not the same frequency, just a reference)
+
+Frequency setting parameters are stored in non-volatile ten secs after they
+were changed. So do not power-off the laser immediately after
+finding the desired pulse frequency at which the laser detector responds.
+
+I found that the horiz laser led exhibits long propagation delay, so in order to achieve 10KHz pulse frequency a 50ohm DC-bias resistor and careful duty cycle control was needed.
+Also a switch was added to increase supply voltage from 3.3V to direct 6V from battery. This extends detection range but with much greater power consumption.
