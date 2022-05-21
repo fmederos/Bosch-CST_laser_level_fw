@@ -6,7 +6,7 @@ From his pictures I realized I owned a laser level with the exact same hardware!
 
 I wanted to field-adjust laser pulse frequency to use the laser detector of my choice. So this FW was born, originating on Niclas work and heavily rewriting the code.
 
-I tested this FW on the CL10 and a Bosch LR8 laser detector, the setup worked up to 40m distance on high power setting (I added a power selector switch).
+I tested this FW on the CL10 using a Bosch LR8 as laser detector, the setup worked up to 40m distance on high power setting (I added a power selector switch to my laser level).
 
 Find further details in Notes.txt and in main.c source file.
 
